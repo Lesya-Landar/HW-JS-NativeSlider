@@ -1,0 +1,151 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+.slides {
+    position: relative;
+    height: 100vh;
+    padding: 0px;
+    margin: 0px;
+    list-style-type: none;
+}
+
+.slide {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    transition: opacity 1s;
+    background-position: 50% 50%;
+    background-size: cover;
+    padding: 40px;
+    
+}
+
+.active {
+    opacity: 1;
+}
+
+
+
+.indicators,
+.controls {
+    display: none;
+}
+
+.controls {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.control__prev,
+.control__next,
+.control__pause {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+}
+
+
+.control__pause {
+    top: calc(50% - 20vh);
+    left: calc(50% - 10vh);
+    height: 40vh;
+    padding: 0;
+    transition: opacity 0.25s ease-out;
+    opacity: 0;
+
+    &:hover,
+    :focus {
+        transition: opacity 1s ease-in 0.5s;
+        opacity: 1;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+.fas {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 40px; 
+    font-weight: 900;
+
+    &:hover {
+        text-shadow: 0 0 10px #ffffff;
+    }
+}
+
+.far {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 400;
+}
+
+
+.fa-play-circle,
+.fa-pause-circle {
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 40vh;
+}
+
+.fa-play-circle:before {
+    content: "\f144";
+} 
+
+
+.fa-pause-circle:before {
+    content: "\f28b";
+} 
+
+
+#next {
+    right: 0;   
+}
+
+.indicators {
+
+position: absolute;
+z-index: 1;
+bottom: 0;
+width: 100%;
+height: 0;
+margin: 0;
+padding: 0;
+justify-content: center;
+}
+
+.indicator {
+    width: 20px;
+    border-radius: 12px;
+    height: 20px;
+    // display: inline-block;
+    margin: -40px 10px 0;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+
+    &.active {
+        border-color: #ffffff;
+        box-shadow: 0 0 10px #ffffff;
+    }
+    
+}
+
+
+
